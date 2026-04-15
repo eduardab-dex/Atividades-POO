@@ -48,6 +48,7 @@ public class BranchCarro {
 
     // MÉTODO EXIBIR CARRO
     void exibir_carro(){
+        System.out.println("DONO: "+ dono);
         System.out.println("PLACA: "+ placa);
         System.out.println("MODELO: "+ modelo);
         System.out.println("COR: "+ cor);
@@ -57,12 +58,14 @@ public class BranchCarro {
 
     // MÉTODO ACELERAR (velocidade += 1)
     void acelerar(){
-        velocidade += 1;
+        velocidade++;
     }
 
     // MÉTODO FREAR (velocidade -= 1)
     void frear(){
-        velocidade -= 1;
+        if (velocidade >= 0){
+            velocidade--;
+        }
     }
 
     /* MÉTODO VENDER
@@ -79,13 +82,13 @@ public class BranchCarro {
 
         switch (forma_pagamento){
             case 1: //PIX
-                preco = preco - (20/100 * preco);
+                preco = preco - (0.2f * preco);
                 break;
             case 2: // DINHEIRO
-                preco = preco - (20/100 * preco);
+                preco = preco - (0.2f * preco);
                 break;
             case 3: // CARTÃO
-            preco = preco + (10/100 * preco);
+            preco = preco + (0.1f * preco);
                 break;
             default:
                 break;
